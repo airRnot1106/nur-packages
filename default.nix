@@ -18,6 +18,7 @@
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
   git-ombl = pkgs.callPackage ./pkgs/git-ombl { };
+  pim = pkgs.callPackage ./pkgs/pim { };
   version-lsp = pkgs.callPackage ./pkgs/version-lsp { };
   volt = pkgs.callPackage ./pkgs/volt { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
