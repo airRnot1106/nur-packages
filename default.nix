@@ -21,6 +21,7 @@
   pim = pkgs.callPackage ./pkgs/pim { };
   version-lsp = pkgs.callPackage ./pkgs/version-lsp { };
   volt = pkgs.callPackage ./pkgs/volt { };
+  yaskkserv2 = pkgs.callPackage ./pkgs/yaskkserv2 { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }

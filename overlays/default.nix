@@ -5,5 +5,6 @@
     pim = prev.callPackage ../pkgs/pim { };
     version-lsp = prev.callPackage ../pkgs/version-lsp { };
     volt = prev.callPackage ../pkgs/volt { };
+    yaskkserv2 = prev.callPackage ../pkgs/yaskkserv2 { };
   };
 }
