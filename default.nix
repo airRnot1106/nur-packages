@@ -18,6 +18,7 @@
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
   git-ombl = pkgs.callPackage ./pkgs/git-ombl { };
+  home-manager-prune = pkgs.callPackage ./pkgs/home-manager-prune { };
   pim = pkgs.callPackage ./pkgs/pim { };
   version-lsp = pkgs.callPackage ./pkgs/version-lsp { };
   volt = pkgs.callPackage ./pkgs/volt { };
