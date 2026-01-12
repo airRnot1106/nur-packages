@@ -17,13 +17,7 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   example-package = pkgs.callPackage ./pkgs/example-package { };
-  git-ombl = pkgs.callPackage ./pkgs/git-ombl { };
-  home-manager-prune = pkgs.callPackage ./pkgs/home-manager-prune { };
-  pim = pkgs.callPackage ./pkgs/pim { };
-  uncomment = pkgs.callPackage ./pkgs/uncomment { };
-  version-lsp = pkgs.callPackage ./pkgs/version-lsp { };
-  volt = pkgs.callPackage ./pkgs/volt { };
-  yaskkserv2 = pkgs.callPackage ./pkgs/yaskkserv2 { };
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   # ...
 }
+// import ./pkgs pkgs
