@@ -20,6 +20,7 @@
   git-ombl = pkgs.callPackage ./pkgs/git-ombl { };
   home-manager-prune = pkgs.callPackage ./pkgs/home-manager-prune { };
   pim = pkgs.callPackage ./pkgs/pim { };
+  uncomment = pkgs.callPackage ./pkgs/uncomment { };
   version-lsp = pkgs.callPackage ./pkgs/version-lsp { };
   volt = pkgs.callPackage ./pkgs/volt { };
   yaskkserv2 = pkgs.callPackage ./pkgs/yaskkserv2 { };
