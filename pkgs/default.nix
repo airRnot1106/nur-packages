@@ -2,6 +2,7 @@ pkgs: {
   git-ombl = pkgs.callPackage ./git-ombl { };
   home-manager-prune = pkgs.callPackage ./home-manager-prune { };
   pim = pkgs.callPackage ./pim { };
+  textlint-rule-preset-ai-writing = pkgs.callPackage ./textlint-rule-preset-ai-writing { };
   uncomment = pkgs.callPackage ./uncomment { };
   version-lsp = pkgs.callPackage ./version-lsp { };
   volt = pkgs.callPackage ./volt { };
