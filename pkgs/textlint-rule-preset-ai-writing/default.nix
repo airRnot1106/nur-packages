@@ -12,7 +12,7 @@ buildNpmPackage (finalAttrs: {
   src = fetchFromGitHub {
     owner = "textlint-ja";
     repo = "textlint-rule-preset-ai-writing";
-    rev = "v${finalAttrs.version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-MI1jm/3KSOYxbZ5+FUL+MSBqojNnUDJENyzkZ10aD6o=";
   };
 

@@ -7,14 +7,14 @@
   pkg-config,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "git-ombl";
   version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "airRnot1106";
     repo = "git-ombl";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-pqCmb31Rh37cWpKK4fvpyfjWkc2qPmKXkBM1c2CCkr8=";
   };
 
@@ -36,4 +36,4 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.mit;
     mainProgram = "git-ombl";
   };
-}
+})

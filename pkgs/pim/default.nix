@@ -4,14 +4,14 @@
   fetchFromGitHub,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "pim";
   version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "airRnot1106";
     repo = "pim";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-cudN5lB0jLgG21cYAearbWylJ1N0vlX82Z6N6LRTt7U=";
   };
 
@@ -23,4 +23,4 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.mit;
     mainProgram = "pim";
   };
-}
+})
