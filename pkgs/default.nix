@@ -1,10 +1,12 @@
-pkgs: {
-  git-ombl = pkgs.callPackage ./git-ombl { };
-  home-manager-prune = pkgs.callPackage ./home-manager-prune { };
-  pim = pkgs.callPackage ./pim { };
-  textlint-rule-preset-ai-writing = pkgs.callPackage ./textlint-rule-preset-ai-writing { };
-  uncomment = pkgs.callPackage ./uncomment { };
-  version-lsp = pkgs.callPackage ./version-lsp { };
-  volt = pkgs.callPackage ./volt { };
-  yaskkserv2 = pkgs.callPackage ./yaskkserv2 { };
-}
+pkgs:
+pkgs.lib.makeScope pkgs.newScope (self: {
+  git-ombl = self.callPackage ./git-ombl { };
+  home-manager-prune = self.callPackage ./home-manager-prune { };
+  pim = self.callPackage ./pim { };
+  textlint-rule-preset-ai-writing = self.callPackage ./textlint-rule-preset-ai-writing { };
+  textlint-rule-preset-japanese = self.callPackage ./textlint-rule-preset-japanese { };
+  uncomment = self.callPackage ./uncomment { };
+  version-lsp = self.callPackage ./version-lsp { };
+  volt = self.callPackage ./volt { };
+  yaskkserv2 = self.callPackage ./yaskkserv2 { };
+})
