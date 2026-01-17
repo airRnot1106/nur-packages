@@ -2,6 +2,10 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
+  pkg-config,
+  openssl,
+  cacert,
+  makeBinaryWrapper,
 }:
 
 rustPlatform.buildRustPackage {
@@ -16,6 +20,20 @@ rustPlatform.buildRustPackage {
   };
 
   cargoHash = "sha256-Tt0LaYDr8hq+DENfLA1ayM80sNNu0QA/il4gsnreNlY=";
+
+  nativeBuildInputs = [
+    pkg-config
+    makeBinaryWrapper
+  ];
+
+  buildInputs = [
+    openssl
+  ];
+
+  postInstall = ''
+    wrapProgram $out/bin/version-lsp \
+      --set SSL_CERT_FILE ${cacert}/etc/ssl/certs/ca-bundle.crt
+  '';
 
   doCheck = false;
 
