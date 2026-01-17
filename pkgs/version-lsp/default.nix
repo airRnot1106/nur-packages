@@ -8,18 +8,18 @@
   makeBinaryWrapper,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "version-lsp";
-  version = "unstable-2026-01-16";
+  version = "0.4.0";
 
   src = fetchFromGitHub {
     owner = "skanehira";
     repo = "version-lsp";
-    rev = "ede6ac749e06731b5fbed84d3382766e6a1ae321";
-    hash = "sha256-E+Nyr9fDOOElPNSYSYj0XTaVWbF4ZuNTCouz/qgE4zg=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-L/j0CtowcyhohCp8ia1Jd6apq+0KSfE18+exH/ghLP4=";
   };
 
-  cargoHash = "sha256-Tt0LaYDr8hq+DENfLA1ayM80sNNu0QA/il4gsnreNlY=";
+  cargoHash = "sha256-/6DKJpuBfvNfGAnfSaZjzZozpXK9m8kqVVcO9ubn91Y=";
 
   nativeBuildInputs = [
     pkg-config
@@ -38,9 +38,9 @@ rustPlatform.buildRustPackage {
   doCheck = false;
 
   meta = {
-    description = "A Language Server Protocol (LSP) implementation that provides version checking diagnostics for package dependency files";
+    description = "Language Server Protocol (LSP) implementation that provides version checking diagnostics for package dependency files";
     homepage = "https://github.com/skanehira/version-lsp";
     license = lib.licenses.mit;
     mainProgram = "version-lsp";
   };
-}
+})
