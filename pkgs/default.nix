@@ -1,5 +1,6 @@
 pkgs:
 pkgs.lib.makeScope pkgs.newScope (self: {
+  bkm = self.callPackage ./bkm { };
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
   pim = self.callPackage ./pim { };
