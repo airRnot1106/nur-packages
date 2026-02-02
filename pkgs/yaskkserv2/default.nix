@@ -2,13 +2,13 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
-  pkg-config,
   openssl,
+  pkg-config,
 }:
 
 rustPlatform.buildRustPackage {
   pname = "yaskkserv2";
-  version = "unstable-2025-05-16";
+  version = "0.1.7-unstable-2025-05-16";
 
   src = fetchFromGitHub {
     owner = "wachikun";
@@ -19,13 +19,8 @@ rustPlatform.buildRustPackage {
 
   cargoHash = "sha256-pj08zWyaXTeg6hffFzQo0cH8k1/A8npxwdLtgHnxUpE=";
 
-  nativeBuildInputs = [
-    pkg-config
-  ];
-
-  buildInputs = [
-    openssl
-  ];
+  buildInputs = [ openssl ];
+  nativeBuildInputs = [ pkg-config ];
 
   doCheck = false;
 
