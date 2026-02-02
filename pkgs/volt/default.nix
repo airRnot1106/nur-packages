@@ -4,14 +4,14 @@
   fetchFromGitHub,
 }:
 
-buildGoModule {
+buildGoModule (finalAttrs: {
   pname = "volt";
-  version = "unstable-2026-01-13";
+  version = "0.1.3";
 
   src = fetchFromGitHub {
     owner = "owenHochwald";
     repo = "volt";
-    rev = "2cf241a5bf87e33bbadcea1426c3d2787ca974cb";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-P18Zbuw4AgsGsTfK2mPAL5jyQgMuiFQ6g3OabhaypP4=";
   };
 
@@ -26,8 +26,8 @@ buildGoModule {
 
   meta = {
     description = "High-performance, concurrent, terminal-based HTTP client";
-    homepage = "https://github.com/owenHochwald/volt";
+    homepage = "https://github.com/owenHochwald/Volt";
     license = lib.licenses.mpl20;
     mainProgram = "volt";
   };
-}
+})
