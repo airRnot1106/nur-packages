@@ -11,6 +11,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   textlint-rule-preset-japanese = self.callPackage ./textlint-rule-preset-japanese { };
   uncomment = self.callPackage ./uncomment { };
   version-lsp = self.callPackage ./version-lsp { };
+  vikokoro = self.callPackage ./vikokoro { };
   volt = self.callPackage ./volt { };
   yaskkserv2 = self.callPackage ./yaskkserv2 { };
 })
