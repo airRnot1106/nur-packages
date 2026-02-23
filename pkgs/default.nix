@@ -14,4 +14,5 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   vikokoro = self.callPackage ./vikokoro { };
   volt = self.callPackage ./volt { };
   yaskkserv2 = self.callPackage ./yaskkserv2 { };
+  zerocast = self.callPackage ./zerocast { };
 })
