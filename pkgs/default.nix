@@ -5,6 +5,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   dockerfile-pin = self.callPackage ./dockerfile-pin { };
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
+  opensrc = self.callPackage ./opensrc { };
   pim = self.callPackage ./pim { };
   similarity = self.callPackage ./similarity { };
   textlint-filter-rule-comments = self.callPackage ./textlint-filter-rule-comments { };
