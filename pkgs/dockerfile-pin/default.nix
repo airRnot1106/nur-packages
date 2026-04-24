@@ -8,13 +8,13 @@
 
 buildGoModule (finalAttrs: {
   pname = "dockerfile-pin";
-  version = "1.2.2";
+  version = "1.3.0";
 
   src = fetchFromGitHub {
     owner = "azu";
     repo = "dockerfile-pin";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-L1Rfb7U/hqk0lpM07+2FYdT/d/sg6ZFJtWx6R6MSDHE=";
+    hash = "sha256-vBBcLQ4ZgiLbUMuDvn8Um24yB9EknuUeU+sxMdg+qoc=";
   };
 
   vendorHash = "sha256-CgMFIYoM+nWiZ5NXtTlXHhrjzVYxoVg0YVpQq3LLrjI=";
