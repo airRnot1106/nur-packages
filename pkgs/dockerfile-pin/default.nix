@@ -2,6 +2,7 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  gitMinimal,
   makeWrapper,
   docker-credential-helpers,
 }:
@@ -32,7 +33,7 @@ buildGoModule (finalAttrs: {
       --prefix PATH : ${lib.makeBinPath [ docker-credential-helpers ]}
   '';
 
-  doCheck = false;
+  nativeCheckInputs = [ gitMinimal ];
 
   meta = {
     description = "A CLI tool for digest pinning — adds @sha256:<digest> to Dockerfile, docker-compose.yml, and GitHub Actions to prevent supply chain attacks";
