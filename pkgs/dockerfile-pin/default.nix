@@ -36,7 +36,7 @@ buildGoModule (finalAttrs: {
   nativeCheckInputs = [ gitMinimal ];
 
   meta = {
-    description = "A CLI tool for digest pinning — adds @sha256:<digest> to Dockerfile, docker-compose.yml, and GitHub Actions to prevent supply chain attacks";
+    description = "Add sha256 digests to Docker images in Dockerfiles, Compose, and GitHub Actions";
     homepage = "https://github.com/azu/dockerfile-pin";
     changelog = "https://github.com/azu/dockerfile-pin/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
