@@ -3,6 +3,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   bkm = self.callPackage ./bkm { };
   blake = self.callPackage ./blake { };
   dockerfile-pin = self.callPackage ./dockerfile-pin { };
+  ghqr = self.callPackage ./ghqr { };
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
   opensrc = self.callPackage ./opensrc { };
