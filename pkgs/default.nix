@@ -2,6 +2,7 @@ pkgs:
 pkgs.lib.makeScope pkgs.newScope (self: {
   bkm = self.callPackage ./bkm { };
   blake = self.callPackage ./blake { };
+  cell = self.callPackage ./cell { };
   dockerfile-pin = self.callPackage ./dockerfile-pin { };
   ghqr = self.callPackage ./ghqr { };
   git-ombl = self.callPackage ./git-ombl { };
