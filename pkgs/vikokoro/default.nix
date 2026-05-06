@@ -16,25 +16,25 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "vikokoro";
-  version = "0-unstable-2026-02-06";
+  version = "0-unstable-2026-05-03";
 
   src = fetchFromGitHub {
     owner = "KASAHARA-Kyohei";
     repo = "vikokoro";
-    rev = "e9a37a149db0993d498c7a96f924763fe1027acd";
-    sha256 = "sha256-bhr7pIwmALw7ePihQqY9M9tcRJk8lh1mmw1fXLb3OB8=";
+    rev = "1855d701d76dc7886844c66162fe0bd8c07b6fe1";
+    sha256 = "sha256-uOmGC1lr3e/zmkSXt1ij44r5kFiJo5aOU5kqQ5dXdwM=";
   };
 
   npmDeps = fetchNpmDeps {
     name = "${finalAttrs.pname}-${finalAttrs.version}-npm-deps";
     inherit (finalAttrs) src;
-    hash = "sha256-CiiraV23cfvpfW7CSPiByH5o232wKvDkQvmqotbKs90=";
+    hash = "sha256-okxisYJljLjVH+DxUgejLI9WMlMcPl6pV8X1mCB/v40=";
   };
 
   cargoRoot = "src-tauri";
   buildAndTestSubdir = finalAttrs.cargoRoot;
 
-  cargoHash = "sha256-iAezX95PsRCwZi2J8q0m414NKBDVUOw6zUjLPGNKp3Q=";
+  cargoHash = "sha256-LWchbdBHxBXdTHyZp/Q2wtTFBmDXlvN0LJqFaxpxSXc=";
 
   nativeBuildInputs = [
     cargo-tauri.hook
