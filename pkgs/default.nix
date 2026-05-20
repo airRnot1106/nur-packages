@@ -2,6 +2,7 @@ pkgs:
 pkgs.lib.makeScope pkgs.newScope (self: {
   bkm = self.callPackage ./bkm { };
   blake = self.callPackage ./blake { };
+  ghasec = self.callPackage ./ghasec { };
   ghqr = self.callPackage ./ghqr { };
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
