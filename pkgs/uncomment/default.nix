@@ -6,22 +6,22 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "uncomment";
-  version = "2.10.4";
+  version = "3.0.3";
 
   src = fetchFromGitHub {
     owner = "goldziher";
     repo = "uncomment";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-YDRToHj3KMGcrWSPxoFGtZs8ahdUqY/KAWg+76rXBVE=";
+    hash = "sha256-A76V1XA0aPsBGBMDVfjyOHLcf/6HOAK8AtXvqOVSw7E=";
     fetchSubmodules = true;
   };
 
-  cargoHash = "sha256-qBI8N6c3LAnWEoCGGjm5qZn4URN0akyXo0A3oZ2bIm4=";
+  cargoHash = "sha256-vwBIiwN2SMkIeEQBYc2BoC04mHxtfs4oKM6LKa1qdUA=";
 
   doCheck = false;
 
   meta = {
-    description = "Blazingly fast CLI to remove comments from code using tree-sitter grammers";
+    description = "Fast CLI to remove comments from code using tree-sitter grammers";
     homepage = "https://github.com/goldziher/uncomment";
     changelog = "https://github.com/goldziher/uncomment/blob/v${finalAttrs.version}/CHANGELOG.md";
     license = lib.licenses.mit;
