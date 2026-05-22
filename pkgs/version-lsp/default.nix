@@ -8,7 +8,7 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "version-lsp";
-  version = "0.4.0-unstable-2026-02-01";
+  version = "0.5.1";
 
   src = fetchFromGitHub {
     owner = "skanehira";
