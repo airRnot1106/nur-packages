@@ -7,6 +7,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
   nothing-less = self.callPackage ./nothing-less { };
+  paracell = self.callPackage ./paracell { };
   pim = self.callPackage ./pim { };
   textlint-filter-rule-comments = self.callPackage ./textlint-filter-rule-comments { };
   textlint-rule-preset-ai-writing = self.callPackage ./textlint-rule-preset-ai-writing { };
