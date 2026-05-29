@@ -4,23 +4,24 @@
   buildGoModule,
   fetchFromGitHub,
   installShellFiles,
+  shellcheck,
   nix-update-script,
 }:
 
 buildGoModule (finalAttrs: {
   pname = "ghasec";
-  version = "0.13.0";
+  version = "0.14.0";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "koki-develop";
     repo = "ghasec";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-3yUpASuGzHns1TsYZ+m2v3iF8ookKJcqF1uVgt0Ebts=";
+    hash = "sha256-nRfltKGs7J31xa/vm37747Zyr8Ly4tEsty+xfjlkegE=";
     fetchSubmodules = true;
   };
 
-  vendorHash = "sha256-yL/lOQ7VdDLIsR5DpC21SHBmVnilLKVkQkc3NWlP4jM=";
+  vendorHash = "sha256-/r1Nil9sHdKlqH3TL7jCy1wnTfk+D41pwf0MWV81hpE=";
 
   ldflags = [
     "-s"
@@ -30,6 +31,10 @@ buildGoModule (finalAttrs: {
 
   nativeBuildInputs = [
     installShellFiles
+  ];
+
+  nativeCheckInputs = [
+    shellcheck
   ];
 
   postInstall = lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform) ''
