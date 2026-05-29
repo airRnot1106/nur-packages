@@ -14,19 +14,19 @@
 
 buildGoModule (finalAttrs: {
   pname = "pumlv";
-  version = "0.3.2";
+  version = "0.3.4";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "rin2yh";
     repo = "pumlv";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-dMdUpk/G0jBdHLiPava9lopJ1rpttv8NiyJ+xp2wnCw=";
+    hash = "sha256-NM5U4wtVxG7T4RoJJUuhUSNgmZYvMtRYe8/HCdUFkf8=";
   };
 
   plantuml-core = fetchurl {
     url = "https://github.com/plantuml/plantuml/releases/download/snapshot/js-plantuml-SNAPSHOT.zip";
-    hash = "sha256-koi9jDaBTM9p8eFxUqbGunYgD05ExDSeyUvDmn9Sx48=";
+    hash = "sha256-8HJPIqE96OPUoQKZCkjCDEnSXwHCCc51hTd37egAnS8=";
   };
 
   frontend = stdenv.mkDerivation (frontendAttrs: {
@@ -44,7 +44,7 @@ buildGoModule (finalAttrs: {
         ;
       pnpm = pnpm_10;
       fetcherVersion = 3;
-      hash = "sha256-FfFoUYmE+a56mCxxMDzJ7UqoLlkxWi86CbrVkLixRIg=";
+      hash = "sha256-km8dn+5YZj+uakzpmMma3kYn71iQP3IdFNHsQuzBG7A=";
     };
 
     nativeBuildInputs = [
@@ -62,8 +62,7 @@ buildGoModule (finalAttrs: {
       mkdir -p public/plantuml
       unzip -o ${finalAttrs.plantuml-core} plantuml.js viz-global.js -d public/plantuml
       substituteInPlace public/plantuml/plantuml.js \
-        --replace-fail 'p<=4096.0' 'p<=65536.0' \
-        --replace-fail 'q<=4096.0' 'q<=65536.0'
+        --replace-fail '4096.0' '65536.0'
 
       substituteInPlace vite.config.ts \
         --replace-fail '"../static/dist"' '"dist"'
