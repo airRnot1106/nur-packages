@@ -1,28 +1,44 @@
 {
   lib,
+  stdenv,
   buildGoModule,
   fetchFromGitHub,
+  installShellFiles,
+  nix-update-script,
 }:
 
 buildGoModule (finalAttrs: {
   pname = "ghqr";
-  version = "0.2.0";
+  version = "0.4.2";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "microsoft";
     repo = "ghqr";
     tag = "v.${finalAttrs.version}";
-    hash = "sha256-QNonvy0T5IkROyzqzBJmpStjtl03v9A7xhVjDRSbUL8=";
+    hash = "sha256-goxKU48fWdCQo0Vng0O3gvRFXsDbuWA/03UH1qUbqrw=";
   };
 
-  vendorHash = "sha256-CCg0FXwnhuNBDFlaXybIIeuo5VhHIMlP6CozDehzfNE=";
+  vendorHash = "sha256-la/yXEZzAIt9l0q0P7+N8yCW0BQie9sLmAhLFK1qyGE=";
 
   ldflags = [
     "-s"
     "-w"
     "-X github.com/microsoft/ghqr/cmd/ghqr/commands.version=${finalAttrs.version}"
   ];
+
+  nativeBuildInputs = [
+    installShellFiles
+  ];
+
+  postInstall = lib.optionalString (stdenv.buildPlatform.canExecute stdenv.hostPlatform) ''
+    installShellCompletion --cmd 'ghqr' \
+      --bash <("$out/bin/ghqr" completion bash) \
+      --zsh <("$out/bin/ghqr" completion zsh) \
+      --fish <("$out/bin/ghqr" completion fish)
+  '';
+
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Evaluate your enterprise and organizations with GitHub best practices";
