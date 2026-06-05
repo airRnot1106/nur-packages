@@ -14,14 +14,14 @@
 
 buildGoModule (finalAttrs: {
   pname = "pumlv";
-  version = "0.3.4";
+  version = "0.3.5";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "rin2yh";
     repo = "pumlv";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-NM5U4wtVxG7T4RoJJUuhUSNgmZYvMtRYe8/HCdUFkf8=";
+    hash = "sha256-vVrzJCxjFJ2sq/vetSouPDedXM7JGA0B3A4crkBe/Uk=";
   };
 
   plantuml-core = fetchurl {
@@ -44,7 +44,7 @@ buildGoModule (finalAttrs: {
         ;
       pnpm = pnpm_10;
       fetcherVersion = 3;
-      hash = "sha256-km8dn+5YZj+uakzpmMma3kYn71iQP3IdFNHsQuzBG7A=";
+      hash = "sha256-XVi4Cn6v3ZnfPjCQhpBf9L/jxjVfJ93oruWGqXyNtXU=";
     };
 
     nativeBuildInputs = [
