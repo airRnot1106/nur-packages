@@ -6,6 +6,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   ghqr = self.callPackage ./ghqr { };
   git-ombl = self.callPackage ./git-ombl { };
   home-manager-prune = self.callPackage ./home-manager-prune { };
+  moine = self.callPackage ./moine { };
   nothing-less = self.callPackage ./nothing-less { };
   paracell = self.callPackage ./paracell { };
   pim = self.callPackage ./pim { };
