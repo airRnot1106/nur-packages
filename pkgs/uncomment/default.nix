@@ -6,17 +6,17 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "uncomment";
-  version = "3.0.3";
+  version = "3.4.0";
 
   src = fetchFromGitHub {
     owner = "goldziher";
     repo = "uncomment";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-A76V1XA0aPsBGBMDVfjyOHLcf/6HOAK8AtXvqOVSw7E=";
+    hash = "sha256-e8dnUHJDu5/ge1ZVNcZrxro/YoMISUKuJ5dUMRwDVM8=";
     fetchSubmodules = true;
   };
 
-  cargoHash = "sha256-vwBIiwN2SMkIeEQBYc2BoC04mHxtfs4oKM6LKa1qdUA=";
+  cargoHash = "sha256-JDapUA8YJrQ76DuJa0hOqlRS+os1pZXD6/M1ZoeD/3U=";
 
   doCheck = false;
 
