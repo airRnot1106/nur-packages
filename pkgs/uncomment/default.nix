@@ -18,6 +18,12 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoHash = "sha256-JDapUA8YJrQ76DuJa0hOqlRS+os1pZXD6/M1ZoeD/3U=";
 
+  # tree-sitter-language-pack's build.rs unconditionally tries to download a
+  # parser-sources tarball from GitHub, even though uncomment doesn't set
+  # TSLP_LANGUAGES and therefore never needs it (grammars are fetched at
+  # runtime instead). Network access isn't available in the Nix build sandbox.
+  env.TSLP_OFFLINE = "1";
+
   doCheck = false;
 
   meta = {
