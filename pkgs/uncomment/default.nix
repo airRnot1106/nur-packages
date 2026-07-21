@@ -6,17 +6,17 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "uncomment";
-  version = "3.4.0";
+  version = "3.5.0";
 
   src = fetchFromGitHub {
     owner = "goldziher";
     repo = "uncomment";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-e8dnUHJDu5/ge1ZVNcZrxro/YoMISUKuJ5dUMRwDVM8=";
+    hash = "sha256-8MUYt7p8UQVuhn/n+ZzD/Qa4VIaDxsBAmN9eBIga/+E=";
     fetchSubmodules = true;
   };
 
-  cargoHash = "sha256-JDapUA8YJrQ76DuJa0hOqlRS+os1pZXD6/M1ZoeD/3U=";
+  cargoHash = "sha256-0n8zxwJp/ITI4UKkmMpCwNoSSy6Kf97Pb74A9Nb4u3I=";
 
   # tree-sitter-language-pack's build.rs unconditionally tries to download a
   # parser-sources tarball from GitHub, even though uncomment doesn't set
