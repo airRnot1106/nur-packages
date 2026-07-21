@@ -7,14 +7,14 @@
 
 buildGoModule (finalAttrs: {
   pname = "paracell";
-  version = "0.1.18";
+  version = "0.1.28";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "hgsg11";
     repo = "paracell";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-jqIFGUsKAZzDDwn1liCZnzyTfPlVs0kZS8VcM6BMPSU=";
+    hash = "sha256-OGU7qV/Et1Bj1pMVh+TDeD0GaoISpW+Fk7nytMJFdac=";
   };
 
   vendorHash = "sha256-tSLf4m2JlOUq2QqPMYiAzSbTvOzmwfGtjEL69p+j9c8=";
