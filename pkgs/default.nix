@@ -8,7 +8,6 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   home-manager-prune = self.callPackage ./home-manager-prune { };
   moine = self.callPackage ./moine { };
   nothing-less = self.callPackage ./nothing-less { };
-  paracell = self.callPackage ./paracell { };
   pim = self.callPackage ./pim { };
   pumlv = self.callPackage ./pumlv { };
   textlint-filter-rule-comments = self.callPackage ./textlint-filter-rule-comments { };
