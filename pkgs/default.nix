@@ -11,6 +11,7 @@ pkgs.lib.makeScope pkgs.newScope (self: {
   nothing-less = self.callPackage ./nothing-less { };
   pim = self.callPackage ./pim { };
   pumlv = self.callPackage ./pumlv { };
+  suiko = self.callPackage ./suiko { };
   textlint-filter-rule-comments = self.callPackage ./textlint-filter-rule-comments { };
   textlint-rule-preset-ai-writing = self.callPackage ./textlint-rule-preset-ai-writing { };
   textlint-rule-preset-japanese = self.callPackage ./textlint-rule-preset-japanese { };
