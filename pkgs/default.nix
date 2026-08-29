@@ -2,6 +2,7 @@ pkgs:
 pkgs.lib.makeScope pkgs.newScope (self: {
   bkm = self.callPackage ./bkm { };
   blake = self.callPackage ./blake { };
+  css-modules-kit-ts-plugin = self.callPackage ./css-modules-kit-ts-plugin { };
   dockerfile-roast = self.callPackage ./dockerfile-roast { };
   ghasec = self.callPackage ./ghasec { };
   ghqr = self.callPackage ./ghqr { };
