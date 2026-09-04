@@ -14,7 +14,14 @@
         }
       );
       packages = forAllSystems (
-        system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system}
+        system:
+        nixpkgs.lib.filterAttrs (
+          _: v:
+          let
+            probe = builtins.tryEval (nixpkgs.lib.isDerivation v);
+          in
+          probe.success && probe.value
+        ) self.legacyPackages.${system}
       );
       overlays = import ./overlays;
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
