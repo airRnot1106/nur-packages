@@ -3,7 +3,7 @@
   buildNpmPackage,
   fetchzip,
   nodejs,
-  typescript,
+  typescript_5,
 }:
 
 buildNpmPackage (finalAttrs: {
@@ -26,7 +26,7 @@ buildNpmPackage (finalAttrs: {
   dontNpmBuild = true;
 
   postInstall = ''
-    ln -s ${typescript}/lib/node_modules/typescript \
+    ln -s ${typescript_5}/lib/node_modules/typescript \
       "$out/lib/node_modules/@css-modules-kit/ts-plugin/node_modules/typescript"
   '';
 
