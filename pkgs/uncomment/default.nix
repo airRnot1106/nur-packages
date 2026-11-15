@@ -2,6 +2,8 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
+  pkg-config,
+  zstd,
 }:
 
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -17,6 +19,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
   };
 
   cargoHash = "sha256-0n8zxwJp/ITI4UKkmMpCwNoSSy6Kf97Pb74A9Nb4u3I=";
+
+  nativeBuildInputs = [ pkg-config ];
+
+  buildInputs = [ zstd ];
 
   # tree-sitter-language-pack's build.rs unconditionally tries to download a
   # parser-sources tarball from GitHub, even though uncomment doesn't set
