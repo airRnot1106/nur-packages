@@ -10,14 +10,14 @@
 
 buildGoModule (finalAttrs: {
   pname = "ghasec";
-  version = "0.17.0";
+  version = "0.18.1";
   __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "koki-develop";
     repo = "ghasec";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-xv0+7HaTbL2q5ddCGxvcaVcZjUGOcr4Ot1A/15+W6GU=";
+    hash = "sha256-UbHDg23zpcZjEQXTt5OlN1MqMt2/4SV72CvlFZwIfBw=";
     fetchSubmodules = true;
   };
 
